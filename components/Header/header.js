@@ -12,7 +12,7 @@ function Header() {
 	return (
 		<div className='relative'>
 			<div className='container w-full flex items-center justify-center'>
-				<div className=''>
+				<div>
 					<div className='flex justify-center w-full mt-32'>
 						<div className='flex flex-col justify-center items-center w-full'>
 						<div className='my-10'><Announcement /></div>
