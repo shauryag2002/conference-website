@@ -34,10 +34,12 @@ function StepTwo({ setStep, setForm, data }) {
           <div
             className="mr-10 text-dark-600 cursor-pointer"
             onClick={() => setStep(null, 1)}
+            aria-label="Back to previous step"
           >
             Back
           </div>
           <Button
+            label='Next'
             type="submit"
             disabled={!data.Description || !data.Title && true}
             className="bg-tetiary-pink p-3 rounded-md text-white mt-3 w-36">

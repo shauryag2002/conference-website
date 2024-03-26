@@ -34,8 +34,9 @@ function Header() {
 							<div className='mt-[54px] relative flex items-center justify-center'>
 								<Link
 									href='#register'
+									aria-label='Register now'
 								>
-									<Button className='w-[250px]'>Register now</Button>
+									<Button label='Register now' className='w-[250px]'>Register now</Button>
 								</Link>
 							</div>
 						</div>

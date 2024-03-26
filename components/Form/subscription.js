@@ -10,8 +10,9 @@ function Subcription() {
 					Subscribe for AACoT’23 updates!
 				</h3>
 				<div className='sm:w-full'>
-					<Link href='https://www.asyncapi.com/newsletter' target='_blank' rel="noreferrer">
+					<Link href='https://www.asyncapi.com/newsletter' target='_blank' rel="noreferrer" aria-label='Subscribe'>
 						<Button
+						    label='Subscribe'
 							type='submit'
 							className='w-full md:w-[200px] mt-8 px-10'
 						>

@@ -12,6 +12,7 @@ function Dropdown({ active, items, setOptions, setOptions2 }) {
 					aria-expanded='true'
 					aria-haspopup='true'
 					onClick={() => setShow(true)}
+					aria-label='Dropdown menu'
 				>
 					<div>{active}</div>
 					<svg

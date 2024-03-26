@@ -29,6 +29,7 @@ function Footer() {
         href="https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md"
         target="_blank"
         rel="noreferrer"
+        aria-label="Code of Conduct"
         className="hover:text-sky-500 text-white duration-200 ease-in-out"
         >
               Code of Conduct
@@ -46,6 +47,7 @@ function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={social.name}
                     className="w-12 h-12 rounded-lg border-[1.5px] border-[#556061] flex items-center justify-center hover:border-[#AD20E2] duration-150 ease-in-out"
                   >
                     <Image

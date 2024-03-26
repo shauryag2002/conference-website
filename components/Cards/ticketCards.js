@@ -8,7 +8,7 @@ function TicketCards({className, city}) {
             <div className='text-xl font-bold text-gradient'>{city.name}, {city.country}</div>
             <div className='mt-2 text-lg'>{city.date}</div>
         </div>
-        <div className='border-t h-20 border-dashed p-4 text-center'><Button disabled={true} className='w-[200px]'>Buy now</Button></div>
+        <div className='border-t h-20 border-dashed p-4 text-center'><Button label='Buy now' disabled={true} className='w-[200px]'>Buy now</Button></div>
     </div>
   )
 }

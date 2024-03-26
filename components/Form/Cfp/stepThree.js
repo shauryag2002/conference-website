@@ -67,10 +67,12 @@ function StepThree({ setStep, setForm, data }) {
         <div
             className="mr-10 text-dark-600 cursor-pointer"
             onClick={() => setStep(null, 1)}
+            aria-label="Back to previous step"
           >
             Back
                   </div>
                   <Button
+                    label='Next'
                     type="submit"
                     disabled={!data.Format || !data.Level && true}
                     className="p-3 rounded-md mt-3 w-36">

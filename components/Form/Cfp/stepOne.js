@@ -52,7 +52,7 @@ function StepOne({ setStep, setForm, data }) {
           }}
                   onChange={(e) => setForm({ ...data, Social: e.target.value })}
         />
-        <Button type="submit"
+        <Button label='Next' type="submit"
           className="bg-tetiary-pink p-3 rounded-md text-white mt-3 float-right w-36"
           disabled={!data.Fullname && true}>Next</Button>
       </div>

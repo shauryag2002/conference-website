@@ -12,7 +12,7 @@ const NavDrop = forwardRef((props, ref)=> {
 			<div className='flex flex-col p-5 pb-8 w-full'>
 				{links.map((link) => {
 					return (
-						<Link href={link.ref} key={link.title}>
+						<Link href={link.ref} key={link.title} aria-label={link.title}>
 							<div
 								className='min-h-[50px] cursor-pointer'
 								onClick={() =>
@@ -32,7 +32,7 @@ const NavDrop = forwardRef((props, ref)=> {
 										{show && show === link.title && (
 											<div className='flex flex-col py-6 w-full'>
 												{link.subMenu.map((sub) => (
-													<Link href={sub.ref} key={sub.ref}>
+													<Link href={sub.ref} key={sub.ref} aria-label={sub.title}>
 														<div
 															onClick={() => setDrop(false)}
 															className='h-[40px] flex navbg items-center p-6 hover:text-black text-white cursor-pointer'

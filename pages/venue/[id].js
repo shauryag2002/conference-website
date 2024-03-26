@@ -44,7 +44,7 @@ function Venue({ city }) {
 						<Paragraph className='mt-[24px]' textColor='text-white'>{city.description}</Paragraph>
 
 						<Heading typeStyle='lg' className='text-white mt-[24px] hover:underline'>
-							<Link href={city.map} target='_blank' rel="noreferrer">
+							<Link href={city.map} target='_blank' rel="noreferrer" aria-label={city.address}>
 								{city.address}
 							</Link>
 						</Heading>
@@ -52,10 +52,10 @@ function Venue({ city }) {
 							{city.date}
 						</Heading>
 						{city.ended ? "" : <div className='m-[30px]'>
-							{city.ticket && <Link href={city.ticket} target='_blank' rel='noreferrer'>
+							{city.ticket && <Link href={city.ticket} target='_blank' rel='noreferrer' aria-label={city.isFree ? "Register for free" : "Register now"}>
 								<Button label={city.isFree ? "Register for free" : "Register now"} className="px-8 m-2 w-[250px]">{city.isFree ? "Register for free" : "Register now"}</Button>
 							</Link>}
-						{city.cfp && <Link href={city.cfp} target='_blank' rel='noreferrer'>
+						{city.cfp && <Link href={city.cfp} target='_blank' rel='noreferrer' aria-label='Apply to be a speaker'>
 								<Button label='Apply to be a speaker' className="px-8 m-2 w-[250px]">Apply to be a speaker</Button>
 							</Link>}
 						</div>}

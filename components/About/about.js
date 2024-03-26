@@ -31,14 +31,15 @@ function About() {
 					</Paragraph>
 					<div className='mt-10 flex gap-4 sm:flex-col lg:justify-center'>
 						<Link
+						aria-label='Become a sponsor now'
 						href='https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1'
 						target='_blank'
 						rel='noreferrer'
 						>
-							<Button className='w-[200px]'>Become a sponsor now</Button>
+							<Button label='Become a sponsor now' className='w-[200px]'>Become a sponsor now</Button>
 						</Link>
-						<Link href='https://drive.google.com/file/d/15rQ7cp-LLmxSCcAb2aBFitgJkGhYXBrd/view' target='_blank' rel="noreferrer">
-						<Button overlay={true} className='w-[200px] border'>Sponsorship prospectus</Button>
+						<Link href='https://drive.google.com/file/d/15rQ7cp-LLmxSCcAb2aBFitgJkGhYXBrd/view' target='_blank' rel="noreferrer" aria-label='Sponsorship prospectus'>
+						<Button label='Sponsorship prospectus' overlay={true} className='w-[200px] border'>Sponsorship prospectus</Button>
 						</Link>
 				</div>
 				</div>

@@ -43,7 +43,7 @@ function Navbar() {
 			<div className='w-[1131px]'>
 				<div className='p-5 flex justify-between h-[75px] w-full items-center'>
 					<div className='flex items-center sm:justify-between sm:w-full'>
-						<Link href='/'>
+						<Link href='/' aria-label='AsyncAPI Logo'>
 							<div className='flex items-center cursor-pointer w-[120px]'>
 							<Image src='/img/logo.png' alt='conference logo' width={120} height={33.575} loading='eager' />
 							</div>
@@ -52,11 +52,11 @@ function Navbar() {
 					{isTablet ? (
 						<div>
 							{drop ? (
-								<button>
+								<button aria-label='Cancel'>
 									<Cancel />
 								</button>
 							) : (
-								<button>
+								<button aria-label='Hamburger'>
 									<Hamburger  ref={svg}/>
 								</button>
 							)}
@@ -84,13 +84,13 @@ function Navbar() {
 													)}
 												</div>
 											) : (
-												<Link href={link.ref}>{link.title}</Link>
+												<Link href={link.ref} aria-label={link.title}>{link.title}</Link>
 											)}
 										</div>
 										{show && show === link.title && link.subMenu && (
 											<div className='subMenu absolute z-[9] mt-8 w-[140px] rounded-md left-[-15px] gradient-bg pl-2 pt-1 flex flex-col justify-center space-y-0'>
 												{link.subMenu.map((subL) => (
-													<Link href={subL.ref} key={subL.title}>
+													<Link href={subL.ref} key={subL.title} aria-label={subL.title}>
 														<div className='h-[32px] text-[16px] hover:scale-95 hover:translate-x-1 transition-all'>
 															{subL.title}
 														</div>
