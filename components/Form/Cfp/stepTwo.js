@@ -31,12 +31,12 @@ function StepTwo({ setStep, setForm, data }) {
           }}
           onChange={(e) => setForm({ ...data, Description: e.target.value })} />
         <div className="float-right">
-          <a
+          <div
             className="mr-10 text-dark-600 cursor-pointer"
             onClick={() => setStep(null, 1)}
           >
             Back
-          </a>
+          </div>
           <Button
             type="submit"
             disabled={!data.Description || !data.Title && true}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 function Speaker({details, location, className}) {
   return (
@@ -6,10 +7,13 @@ function Speaker({details, location, className}) {
 			className={`w-auto text-center flex flex-col items-center card-bg h-auto rounded-md p-[27px] ${className}`}
 		>
 			<div className='w-[300px] h-[300px] lg:w-[250px] lg:h-[250px]'>
-				<img
+			    <Image
 					src={details.img}
 					alt={details.name}
 					className='rounded-full w-full h-full object-cover'
+					height={300}
+					width={300}
+					loading='eager'
 				/>
 			</div>
 			<div className='mt-[19px]'>

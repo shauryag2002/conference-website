@@ -6,6 +6,7 @@ import Heading from '../../components/Typography/heading';
 import Paragraph from '../../components/Typography/paragraph';
 import speakers from '../../config/speakers.json';
 import Sponsors from '../../components/Sponsors/sponsors';
+import Link from 'next/link';
 
 export async function getStaticProps({ params }) {
 	let res = {};
@@ -43,20 +44,20 @@ function Venue({ city }) {
 						<Paragraph className='mt-[24px]' textColor='text-white'>{city.description}</Paragraph>
 
 						<Heading typeStyle='lg' className='text-white mt-[24px] hover:underline'>
-							<a href={city.map} target='_blank' rel="noreferrer">
-    							{city.address}
-  							</a>
+							<Link href={city.map} target='_blank' rel="noreferrer">
+								{city.address}
+							</Link>
 						</Heading>
 						<Heading typeStyle='lg' className='text-white mt-[24px]'>
 							{city.date}
 						</Heading>
 						{city.ended ? "" : <div className='m-[30px]'>
-							{city.ticket && <a href={city.ticket} target='_blank' rel='noreferrer'>
-							<Button className="px-8 m-2 w-[250px]">{city.isFree ? "Register for free" : "Register now"}</Button>
-						</a>}
-						{city.cfp && <a href={city.cfp} target='_blank' rel='noreferrer'>
-							<Button className="px-8 m-2 w-[250px]">Apply to be a speaker</Button>
-						</a>}
+							{city.ticket && <Link href={city.ticket} target='_blank' rel='noreferrer'>
+								<Button label={city.isFree ? "Register for free" : "Register now"} className="px-8 m-2 w-[250px]">{city.isFree ? "Register for free" : "Register now"}</Button>
+							</Link>}
+						{city.cfp && <Link href={city.cfp} target='_blank' rel='noreferrer'>
+								<Button label='Apply to be a speaker' className="px-8 m-2 w-[250px]">Apply to be a speaker</Button>
+							</Link>}
 						</div>}
 					</div>
 				</div>

@@ -6,7 +6,7 @@ import NavDrop from './navDrop';
 import Hamburger from '../illustration/hamburger';
 import { useMediaQuery } from 'react-responsive';
 import Cancel from '../illustration/cancel';
-
+import Image from 'next/image';
 
 
 function Navbar() {
@@ -45,7 +45,7 @@ function Navbar() {
 					<div className='flex items-center sm:justify-between sm:w-full'>
 						<Link href='/'>
 							<div className='flex items-center cursor-pointer w-[120px]'>
-								<img src='/img/logo.png' alt='conference logo' />
+							<Image src='/img/logo.png' alt='conference logo' width={120} height={33.575} loading='eager' />
 							</div>
 						</Link>
 					</div>

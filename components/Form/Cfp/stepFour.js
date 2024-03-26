@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import ActivityLoader from "../../illustration/activityLoader";
 import Button from "../../Buttons/button";
+import Link from "next/link";
 
 function StepFour({ setStep, setForm, data }) {
   const [submitting, setSubmitting] = useState(false);
@@ -26,8 +27,8 @@ function StepFour({ setStep, setForm, data }) {
       .catch((err) => {
         setSubmitting(false);
         toast.error("Failed to submit feedback. Try again", {
-            duration: '6000'
-          });
+          duration: '6000'
+        });
       });
   };
   return (
@@ -36,7 +37,7 @@ function StepFour({ setStep, setForm, data }) {
         Additional Information
       </h1>
       <p className="mt-3 text-dark-600">
-        Notes will only be seen by reviewers during the CFP process. Therefore, it is important to use this space to explain any technical requirements or why you are best suited to speak on the subject, etc...  
+        Notes will only be seen by reviewers during the CFP process. Therefore, it is important to use this space to explain any technical requirements or why you are best suited to speak on the subject, etc...
       </p>
       <div className="mt-3 border w-full border-solid border-y-dark-600 divide-y" />
       <div className="mt-10">
@@ -48,17 +49,17 @@ function StepFour({ setStep, setForm, data }) {
           }}
           onChange={(e) => setForm({ ...data, AdditionalInfo: e.target.value })}
         />
-        
+
         <div className="mt-6 text-dark-600 text-md">
-          By clicking submit, this means you agree to follow the <a className="underline" href="https://github.com/asyncapi/spec/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer">AsyncAPI Initiative Code of Conduct</a>
+          By clicking submit, this means you agree to follow the <span className="underline"><Link href="https://github.com/asyncapi/spec/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer">AsyncAPI Initiative Code of Conduct</Link></span>
         </div>
         <div className="float-right">
-          <a
+          <div
             className="mr-10 text-dark-600 cursor-pointer"
             onClick={() => !disabled && setStep(null, 3)}
           >
             Back
-          </a>
+          </div>
           <Button
             type="submit"
             className="p-3 rounded-md mt-3 w-36"

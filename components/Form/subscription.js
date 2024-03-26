@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Buttons/button';
+import Link from 'next/link';
 
 function Subcription() {
 	return (
@@ -8,15 +9,16 @@ function Subcription() {
 				<h3 className='text-[32px] text-white lg:text-center'>
 					Subscribe for AACoT’23 updates!
 				</h3>
-				<a href='https://www.asyncapi.com/newsletter' target='_blank' rel="noreferrer" className='sm:w-full'>
-				<Button
-					type='submit'
-					className='w-full md:w-[200px] mt-8 px-10' 
-				>
-					Subscribe
-				</Button>
-
-				</a>
+				<div className='sm:w-full'>
+					<Link href='https://www.asyncapi.com/newsletter' target='_blank' rel="noreferrer">
+						<Button
+							type='submit'
+							className='w-full md:w-[200px] mt-8 px-10'
+						>
+							Subscribe
+						</Button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
