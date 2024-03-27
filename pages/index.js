@@ -11,6 +11,7 @@ import TicketCards from '../components/Cards/ticketCards';
 import Heading from '../components/Typography/heading';
 import Paragraph from '../components/Typography/paragraph';
 import Image from 'next/image';
+import FaqPage from './faq';
 
 export default function Home() {
 	return (
@@ -48,6 +49,9 @@ export default function Home() {
 			</div>
 			<div id='sponsors' className='mt-20'>
 				<Sponsors imgs={['/img/apidays.png']} />
+			</div>
+			<div id='faq'>
+				<FaqPage mainPage={true} />
 			</div>
 		</div>
 	);
