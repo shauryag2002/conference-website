@@ -15,4 +15,14 @@ describe('About Page', () => {
                 cy.contains('Sponsorship prospectus').should('be.visible');
             });
     });
+    it('Downloads the sponsorship prospectus', () => {
+        cy.visit('/');
+        cy.get('button').contains('Sponsorship prospectus').click({ force: true });
+        cy.get('a').should('have.attr', 'href');
+        cy.window().then((win) => {
+            cy.stub(win, 'open').as('windowOpen');
+        });
+        cy.get('button').contains('Sponsorship prospectus').click({ force: true });
+        cy.get('@windowOpen').should('be.calledWith', 'https://drive.google.com/file/d/15rQ7cp-LLmxSCcAb2aBFitgJkGhYXBrd/view', '_blank');
+    });
 });

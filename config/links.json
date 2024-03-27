@@ -30,10 +30,11 @@
 		"ref": "/#sponsors"
 	},
 	{
-		"title":"Past Editions",
-		"ref":"/editions"
+		"title": "Past Editions",
+		"ref": "/editions"
+	},
+	{
+		"title": "FAQs",
+		"ref": "/faq"
 	}
 ]
-
-
-    
