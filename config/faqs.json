@@ -1,0 +1,68 @@
+{
+    "speakerQuestions": [
+        {
+            "question": "How can I apply to be a speaker?",
+            "answer": "To apply to be a speaker, please fill out the speaker application form on our website."
+        },
+        {
+            "question": "What are the criteria for selecting speakers?",
+            "answer": "We look for speakers who have expertise in their field, can deliver engaging presentations, and offer valuable insights to our audience. Diversity, inclusion, and relevance to the conference theme are also important considerations."
+        },
+        {
+            "question": "Can I suggest a topic for my presentation?",
+            "answer": "Yes, we encourage speakers to propose topics that align with the conference theme and are relevant to our audience. Please include your topic suggestion in your speaker application."
+        },
+        {
+            "question": "What equipment will be provided for my presentation?",
+            "answer": "We provide standard AV equipment such as microphones, projectors, and screens. If you have specific technical requirements, please let us know in advance so we can accommodate your needs."
+        },
+        {
+            "question": "Is there a deadline for submitting presentation materials?",
+            "answer": "Yes, we request all speakers to submit their presentation materials (slides, handouts, etc.) at least one week before the conference. This allows us to review and prepare the materials for the event."
+        }
+    ],
+    "studentQuestions": [
+        {
+            "question": "How do I register as a student attendee?",
+            "answer": "To register as a student attendee, please visit our registration page and select the 'Student' option."
+        },
+        {
+            "question": "Are there any discounts available for student attendees?",
+            "answer": "Yes, we offer discounted ticket prices for students. Please check our registration page for details on student pricing and any available discounts."
+        },
+        {
+            "question": "Can I volunteer at the conference as a student?",
+            "answer": "Yes, we welcome student volunteers to help us with various tasks during the conference. Please contact our volunteer coordinator for more information on how to get involved."
+        },
+        {
+            "question": "Are there any student-specific sessions or activities planned?",
+            "answer": "Yes, we often organize special sessions or workshops tailored specifically for student attendees. Keep an eye on our schedule for details on student-focused events."
+        },
+        {
+            "question": "Can I present my research or projects at the conference as a student?",
+            "answer": "Yes, we encourage students to submit proposals for poster presentations or lightning talks showcasing their research or projects. Check our website for information on how to submit your proposal."
+        }
+    ],
+    "sponsorQuestions": [
+        {
+            "question": "How can I become a sponsor for the conference?",
+            "answer": "To become a sponsor for the conference, please contact our sponsorship team for more information on available sponsorship packages and opportunities."
+        },
+        {
+            "question": "What are the benefits of sponsoring the conference?",
+            "answer": "Sponsoring the conference offers a range of benefits, including brand exposure, networking opportunities, and access to a targeted audience of industry professionals and decision-makers. Our sponsorship packages are designed to provide maximum value and visibility for our sponsors."
+        },
+        {
+            "question": "Can I customize a sponsorship package to suit my needs?",
+            "answer": "Yes, we offer customizable sponsorship packages that can be tailored to meet your specific needs and objectives. Our sponsorship team will work with you to create a package that aligns with your goals and budget."
+        },
+        {
+            "question": "Are there any sponsorship opportunities for startups or small businesses?",
+            "answer": "Yes, we offer sponsorship opportunities for startups and small businesses looking to gain exposure and connect with our audience. Our sponsorship team can help you find a package that fits your budget and goals."
+        },
+        {
+            "question": "How can I maximize the benefits of sponsoring the conference?",
+            "answer": "To maximize the benefits of sponsoring the conference, we recommend taking advantage of all the promotional opportunities included in your sponsorship package. This may include branding, speaking opportunities, networking events, and more. Our sponsorship team can help you make the most of your sponsorship investment."
+        }
+    ]
+}
