@@ -16,7 +16,7 @@ function Header() {
 					<div className='flex justify-center w-full mt-32'>
 						<div className='flex flex-col justify-center items-center w-full'>
 						<div className='my-10'><Announcement /></div>
-							<div className='sm:w-full text-center'>
+							<div className='sm:w-full text-center' data-cy='heading'>
 								<Heading
 									className='text-6xl sm:text-4xl leading-normal sm:leading-38px tracking-[-3px] sm:tracking-[-0.02em] font-extrabold text-gradient'
 									level='h1'
@@ -25,13 +25,13 @@ function Header() {
 									AsyncAPI Conf On Tour 2024
 								</Heading>
 							</div>
-							<div className='w-[624px] sm:w-full text-center'>
+							<div className='w-[624px] sm:w-full text-center' data-cy='headPara'>
 								<Paragraph className='mt-[16px]' textColor='text-gray-200'>
 								Join us for the AsyncAPI Conference on Tour,
 								bringing the latest in AsyncAPI technology to locations worldwide!
 								</Paragraph>
 							</div>
-							<div className='mt-[54px] relative flex items-center justify-center'>
+							<div className='mt-[54px] relative flex items-center justify-center' data-cy='register'>
 								<Link
 									href='#register'
 									aria-label='Register now'
@@ -43,7 +43,7 @@ function Header() {
 					</div>
 				</div>
 			</div>
-			<div className='mt-24'>
+			<div className='mt-24' data-cy='slider'>
 				<ReactSlider>
 					{cities.map((city) => {
 						return <Venue key={city.name} city={city}/>;

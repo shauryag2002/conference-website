@@ -47,6 +47,7 @@ function Dropdown({ active, items, setOptions, setOptions2 }) {
 					aria-orientation='vertical'
 					aria-labelledby='menu-button'
 					tabindex='-1'
+					data-cy='DropDown'
 				>
 					<div className='' role='none'>
 						{items &&

@@ -41,7 +41,7 @@ export default function Home() {
 			Experience the Future of Asynchronous Communication: Tickets for Sale for the AsyncAPI Conference on Tour!
 			</Paragraph>
 			</div>
-			<div className='w-[1000px] lg:w-full mt-10 flex justify-between lg:flex-col'>
+			<div className='w-[1000px] lg:w-full mt-10 flex justify-between lg:flex-col' data-cy='tickets'>
 				{cities.map((city) => <TicketCards key={city.name} city={city} className='lg:mt-10' />)}
 			</div>
 			</div>

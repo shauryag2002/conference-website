@@ -21,7 +21,7 @@ function Footer() {
     },
   ];
   return (
-    <div className="container">
+    <div className="container" data-cy='footer'>
       <div className="w-full flex justify-between items-center p-4 sm:flex-col sm:gap-3">
         <Image src="/img/logo.png" className="w-[150px]" width={150} height={41.962} loading="eager" alt='logo' />
       <div className="mt-2 text-[14px] text-gray-100 underline">
@@ -39,7 +39,7 @@ function Footer() {
       </div>
         <div className="flex items-center justify-between sm:flex-col sm:items-start">
           <div className="flex flex-col justify-between items-start gap-2 w-[284px] sm:items-center">
-            <div className="flex justify-between items-center gap-3">
+            <div className="flex justify-between items-center gap-3" data-cy='socials'>
               {socials.map((social, index) => {
                 return (
                   <Link

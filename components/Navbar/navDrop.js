@@ -9,7 +9,7 @@ const NavDrop = forwardRef((props, ref)=> {
     const [show, setShow] = useState(null);
   return (
 		<div  ref ={ref} className='absolute ml-[-20px] top-16 w-full bg-[#1B1130]'>
-			<div className='flex flex-col p-5 pb-8 w-full'>
+			<div className='flex flex-col p-5 pb-8 w-full' data-cy="dropDown">
 				{links.map((link) => {
 					return (
 						<Link href={link.ref} key={link.title} aria-label={link.title}>

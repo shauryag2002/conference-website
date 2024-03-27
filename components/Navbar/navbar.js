@@ -45,12 +45,12 @@ function Navbar() {
 					<div className='flex items-center sm:justify-between sm:w-full'>
 						<Link href='/' aria-label='AsyncAPI Logo'>
 							<div className='flex items-center cursor-pointer w-[120px]'>
-							<Image src='/img/logo.png' alt='conference logo' width={120} height={33.575} loading='eager' />
+							<Image data-cy="logo-image" src='/img/logo.png' alt='conference logo' width={120} height={33.575} loading='eager' />
 							</div>
 						</Link>
 					</div>
 					{isTablet ? (
-						<div>
+						<div data-cy='hamburger'>
 							{drop ? (
 								<button aria-label='Cancel'>
 									<Cancel />
@@ -88,7 +88,7 @@ function Navbar() {
 											)}
 										</div>
 										{show && show === link.title && link.subMenu && (
-											<div className='subMenu absolute z-[9] mt-8 w-[140px] rounded-md left-[-15px] gradient-bg pl-2 pt-1 flex flex-col justify-center space-y-0'>
+											<div className='subMenu absolute z-[9] mt-8 w-[140px] rounded-md left-[-15px] gradient-bg pl-2 pt-1 flex flex-col justify-center space-y-0' data-cy="dropDownContent">
 												{link.subMenu.map((subL) => (
 													<Link href={subL.ref} key={subL.title} aria-label={subL.title}>
 														<div className='h-[32px] text-[16px] hover:scale-95 hover:translate-x-1 transition-all'>
