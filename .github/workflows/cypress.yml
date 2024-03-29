@@ -16,9 +16,10 @@ jobs:
       - name: Set up environment variables
         run: |
           touch .env
-          echo NEXT_PUBLIC_GOOGLE_PRIVATE_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }} >> .env
-          echo NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL }} >> .env
-          echo NEXT_PUBLIC_GOOGLE_SHEET_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID }} >> .env
+          echo "NEXT_PUBLIC_GOOGLE_PRIVATE_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }}" >> .env
+          echo "NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> .env
+          echo "NEXT_PUBLIC_GOOGLE_SHEET_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID }}" >> .env
+          cat .env
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
