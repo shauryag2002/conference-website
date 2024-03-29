@@ -14,6 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up environment variables
+        env:
+          NEXT_PUBLIC_GOOGLE_PRIVATE_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }}
+          NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          NEXT_PUBLIC_GOOGLE_SHEET_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID }}
         run: |
           touch .env
           echo "NEXT_PUBLIC_GOOGLE_PRIVATE_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }}" >> .env
