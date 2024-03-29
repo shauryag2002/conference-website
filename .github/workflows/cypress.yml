@@ -19,6 +19,7 @@ jobs:
           echo "NEXT_PUBLIC_GOOGLE_PRIVATE_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }}" >> .env
           echo "NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> .env
           echo "NEXT_PUBLIC_GOOGLE_SHEET_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID }}" >> .env
+
           cat .env
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
