@@ -4,6 +4,7 @@ import StepOne from "./Cfp/stepOne";
 import StepTwo from "./Cfp/stepTwo";
 import StepThree from './Cfp/stepThree';
 import StepFour from './Cfp/stepFour';
+import Image from 'next/image';
 
 const fields = [
   {
@@ -67,23 +68,24 @@ function Paper() {
     );
   }
   if (step === "successful") {
-    view = <div  className='flex items-center h-full'>
-      <div>
-          <h1 className='text-2xl text-white font-bold mt-6'>Your talk have been submitted successfully</h1>
+    view = <div className={'flex items-center overflow-hidden h-full justify-center'}>
+      <div className='lg:h-[325px] sm:h-[325px] flex flex-col justify-center items-center'>
+        <Image src='/img/done.png' className='h-[200px] w-[200px]' width={200} height={200} alt='success' loading='eager' />
+        <h1 className='text-2xl text-white font-bold mt-6'>Your talk have been submitted successfully</h1>
       </div>
-       <Confetti numberOfPieces={50} width={width} height={height} tweenDuration={40} />
+      <Confetti numberOfPieces={50} width={width} height={height} tweenDuration={40} />
     </div>
   }
 
     return (
         <div className="relative mt-10 sm:mt-0" id="forms" ref={confetiRef}>
-            <h1 className="text-white font-bold text-5xl lg:text-3xl">
+            <h1 className="text-white font-bold text-5xl lg:text-3xl px-4">
         Submit your talk!
             </h1>
-            <p className="mt-2 text-dark-500 text-lg">
+            <p className="mt-2 text-dark-500 text-lg px-4">
           We are actively accepting speaker applications, <br /> Fill up the form to apply as a speaker.
         </p>
-        <div className='flex mt-8 justify-between sm:flex-col items-center sm:items-start text-dark-500 text-sm'>
+        <div className='flex mt-8 justify-between sm:flex-col items-center sm:items-start text-dark-500 text-sm px-4'>
           <p>
                P.S. We do not offer travel scholarships or financial support.
           </p>
@@ -100,7 +102,6 @@ function Paper() {
           className="lg:hidden"
           style={{
             borderRight: "1px solid #333",
-            minHeight: "50vh",
           }}
         >
           <div className="p-6 lg:p-0 lg:py-2 lg:pr-4 mt-12">
@@ -110,6 +111,7 @@ function Paper() {
                 <div
                       key={field.title}
                       className='h-[100px]'
+                      onClick={() => setStep(index)}
                 >
                   <div className="flex justify-between">
                     <div className="md:hidden">
@@ -124,7 +126,7 @@ function Paper() {
             })}
           </div>
         </div>
-        <div className="p-10 p-6">
+        <div className="p-6 w-[77%] lg:w-auto">
           <p className="text-dark-400">{typeof(step) === 'number' && `Step ${step}/4`}</p>
           {view}
           <div

@@ -39,7 +39,7 @@ function StepThree({ setStep, setForm, data }) {
     setForm({ ...data, ...value});
   }, [value]); 
   return (
-    <form className="mt-3 w-[30rem] lg:w-[auto]" onSubmit={(e) => setStep(e, 4)}>
+    <form className="mt-3 lg:w-[auto]" onSubmit={(e) => setStep(e, 4)}>
       <h1 className="text-white font-bold text-4xl lg:text-3xl">
         Session Info
       </h1>
@@ -49,24 +49,24 @@ function StepThree({ setStep, setForm, data }) {
           <p className="mt-4 text-sm text-dark-600">The sessions are expected to feature in-person presentations.</p>
       <div className="mt-3 border w-full border-solid border-y-dark-600 divide-y" />
           <div className="mt-10">
-        <div className="text-dark-600 text-lg mb-4">Session Format</div>
+        <div className="text-dark-600 text-lg mb-4 text-gradient">Session Format</div>
         <Select
           options={options1}
           title="Select session format"
           setValue={(val) => setValue({...value, Format: val})}
           multi={false}
         />
-        <div className="text-dark-600 text-lg mt-4 mb-4">Session Level</div>
+        <div className="text-dark-600 text-lg mt-4 mb-4 text-gradient">Session Level</div>
         <Select
           options={options2}
           title="Select session level"
           setValue={(val) => setValue({...value, Level: val})}
           multi={false}
         />
-        <div className="float-right">
+        <div className="flex justify-between">
         <div
-            className="mr-10 text-dark-600 cursor-pointer"
-            onClick={() => setStep(null, 1)}
+            className="mr-10 text-dark-600 cursor-pointer self-center ml-3"
+            onClick={() => setStep(null, 2)}
             aria-label="Back to previous step"
           >
             Back
@@ -75,7 +75,7 @@ function StepThree({ setStep, setForm, data }) {
                     label='Next'
                     type="submit"
                     disabled={!data.Format || !data.Level && true}
-                    className="p-3 rounded-md mt-3 w-36">
+                    className={`p-3 rounded-md mt-3 w-36 ${(!data.Format || !data.Level) && 'cursor-not-allowed opacity-50'}`}>
                       Next
                   </Button>
         </div>

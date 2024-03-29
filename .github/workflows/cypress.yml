@@ -32,3 +32,6 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          NEXT_PUBLIC_GOOGLE_PRIVATE_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY }}
+          NEXT_PUBLIC_GOOGLE_SHEET_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_SHEET_ID}}
