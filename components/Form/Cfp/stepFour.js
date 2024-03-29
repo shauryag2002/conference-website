@@ -4,35 +4,49 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import ActivityLoader from "../../illustration/activityLoader";
 import Button from "../../Buttons/button";
-import Link from "next/link";
-
+import Link from 'next/link';
+// import { google } from 'googleapis';
+// import { onSubmit } from "./FormSubmit";
 function StepFour({ setStep, setForm, data }) {
   const [submitting, setSubmitting] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    axios
-      .post(
-        "https://sheet.best/api/sheets/91aebdc6-66cb-46c2-9c7b-4cdfc7541b56",
-        data
-      )
-      .then((res) => {
-        setSubmitting(false);
-        if (res.status === 200) {
-          setDisabled(true);
-          setStep(e, 'successful')
-        }
-      })
-      .catch((err) => {
-        setSubmitting(false);
-        toast.error("Failed to submit feedback. Try again", {
-          duration: '6000'
-        });
-      });
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const res = await axios.post('/api/submitForm', { data });
+
+      setSubmitting(false);
+      if (res.status === 200) {
+        setDisabled(true);
+        setStep(e, 'successful');
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitting(false);
+      // Handle error
+    }
+    // axios
+    //   .post(
+    //     "https://sheet.best/api/sheets/91aebdc6-66cb-46c2-9c7b-4cdfc7541b56",
+    //     data
+    //   )
+    //   .then((res) => {
+    //     setSubmitting(false);
+    //     if (res.status === 200) {
+    //       setDisabled(true);
+    //       setStep(e, 'successful')
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     setSubmitting(false);
+    //     toast.error("Failed to submit feedback. Try again", {
+    //         duration: '6000'
+    //       });
+    //   });
   };
   return (
-    <form className="mt-3 w-[30rem] lg:w-[auto]" onSubmit={(e) => onSubmit(e)}>
+    <form className="mt-3 lg:w-[auto]" onSubmit={(e) => onSubmit(e)}>
       <h1 className="text-white font-bold text-4xl lg:text-3xl">
         Additional Information
       </h1>
@@ -43,17 +57,18 @@ function StepFour({ setStep, setForm, data }) {
       <div className="mt-10">
         <div className="text-dark-600 text-lg">Additional Information</div>
         <textarea
-          className="mt-3 w-full p-4 rounded-md focus:outline-none"
+          className="mt-1 w-full p-4 rounded-md focus:outline-none bg-transparent text-white"
           style={{
             border: "1px solid #E50E99",
           }}
+          value={data.AdditionalInfo}
           onChange={(e) => setForm({ ...data, AdditionalInfo: e.target.value })}
         />
 
         <div className="mt-6 text-dark-600 text-md">
-          By clicking submit, this means you agree to follow the <span className="underline"><Link href="https://github.com/asyncapi/spec/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer" aria-label="Code of Conduct">AsyncAPI Initiative Code of Conduct</Link></span>
+          By clicking submit, this means you agree to follow the <span className="underline text-gray-400"><Link href="https://github.com/asyncapi/spec/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer" aria-label="Code of Conduct">AsyncAPI Initiative Code of Conduct</Link></span>
         </div>
-        <div className="float-right">
+        <div className="flex justify-between align-center">
           <div
             className="mr-10 text-dark-600 cursor-pointer"
             onClick={() => !disabled && setStep(null, 3)}
@@ -62,7 +77,7 @@ function StepFour({ setStep, setForm, data }) {
             Back
           </div>
           <Button
-            label="Submit"
+            label='Submit'
             type="submit"
             className="p-3 rounded-md mt-3 w-36"
             disabled={submitting || disabled}

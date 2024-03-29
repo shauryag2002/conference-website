@@ -55,7 +55,7 @@ function Venue({ city }) {
 							{city.ticket && <Link href={city.ticket} target='_blank' rel='noreferrer' aria-label={city.isFree ? "Register for free" : "Register now"}>
 								<Button label={city.isFree ? "Register for free" : "Register now"} className="px-8 m-2 w-[250px]">{city.isFree ? "Register for free" : "Register now"}</Button>
 							</Link>}
-						{city.cfp && <Link href={city.cfp} target='_blank' rel='noreferrer' aria-label='Apply to be a speaker'>
+						{city.cfp && <Link href={'/apply-for-speaker'} target='_blank' rel='noreferrer' aria-label='Apply to be a speaker'>
 								<Button label='Apply to be a speaker' className="px-8 m-2 w-[250px]">Apply to be a speaker</Button>
 							</Link>}
 						</div>}
