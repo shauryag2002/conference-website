@@ -7,6 +7,7 @@ import cities from '../../config/city-lists.json';
 import Venue from '../Venue/venue';
 import Announcement from '../announcement';
 import Link from 'next/link';
+import { Typewriter } from 'react-simple-typewriter';
 
 function Header() {
 	return (
@@ -15,7 +16,7 @@ function Header() {
 				<div className=''>
 					<div className='flex justify-center w-full mt-32'>
 						<div className='flex flex-col justify-center items-center w-full'>
-						<div className='my-10'><Announcement /></div>
+							<div className='my-10'><Announcement /></div>
 							<div className='sm:w-full text-center' data-cy='heading'>
 								<Heading
 									className='text-6xl sm:text-4xl leading-normal sm:leading-38px tracking-[-3px] sm:tracking-[-0.02em] font-extrabold text-gradient'
@@ -27,8 +28,7 @@ function Header() {
 							</div>
 							<div className='w-[624px] sm:w-full text-center' data-cy='headPara'>
 								<Paragraph className='mt-[16px]' textColor='text-gray-200'>
-								Join us for the AsyncAPI Conference on Tour,
-								bringing the latest in AsyncAPI technology to locations worldwide!
+									<Typewriter words={['Join us for the AsyncAPI Conference on Tour, bringing the latest in AsyncAPI technology to locations worldwide!']} loop={0} cursor={true} cursorStyle='|' typeSpeed={50} deleteSpeed={70} delaySpeed={2000} />
 								</Paragraph>
 							</div>
 							<div className='mt-[54px] relative flex items-center justify-center' data-cy='register'>
@@ -46,7 +46,7 @@ function Header() {
 			<div className='mt-24' data-cy='slider'>
 				<ReactSlider>
 					{cities.map((city) => {
-						return <Venue key={city.name} city={city}/>;
+						return <Venue key={city.name} city={city} />;
 					})}
 				</ReactSlider>
 			</div>
